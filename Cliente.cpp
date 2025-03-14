@@ -1,19 +1,24 @@
-#include <iostream>
 #include "Cliente.h"
-using namespace std;
 
-/* Constructor vacio. Instancia con valores iniciales */
-Cliente::Cliente()
+// Constructor por defecto
+Cliente::Cliente() : id(0), nombre(""), telefono("") {}
+
+// Constructor con parámetros
+Cliente::Cliente(int id, string nombre, string telefono)
+    : id(id), nombre(nombre), telefono(telefono) {}
+
+// Métodos getters
+int Cliente::getId() const
 {
-    id = 0;
-    telefono = 0;
-    nombre = "";
+    return id;
 }
 
-/* Constructor con valores reales */
-Cliente::Cliente(int id, int telefono, string nombre)
+string Cliente::getNombre() const
 {
-    id = cedula;
-    telefono = celular;
-    nombre = sunombre;
+    return nombre;
+}
+
+string Cliente::getTelefono() const
+{
+    return telefono;
 }
